@@ -1,4 +1,13 @@
 // CRUD - create(post), read(get), update(put), delete(delete).
+var fs = require('fs');
+var options = {
+    key: fs.readFileSync('./privateKey.key'),
+    cert: fs.readFileSync('./server.crt'),
+    requestCert: false,
+    rejectUnauthorized: false
+};
+var https = require('https');
+
 var express = require('express');
 var app = express();
 var waitingList = require('./waitingList.js');
@@ -81,5 +90,6 @@ app.del('/waitinglist/:id', function (req, res) {  
         deleted: true
     });
 });
-app.listen(26789); // Port.
+https.createServer(options, app)
+    .listen(26789); // Port.
 console.log('Server started on 26789');
