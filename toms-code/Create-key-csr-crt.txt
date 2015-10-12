@@ -1,0 +1,5 @@
+#Do not give the certificate a password.
+
+openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key
+
+openssl x509 -req -days 365 -in CSR.csr -signkey privateKey.key -out server.crt

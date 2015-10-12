@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>  
+	<title>Waiting list</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/style1.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<!--<script src="js/request.js"></script>
+	<script src="js/waitingList.js"></script>
+	<script src="js/ui.js"></script>-->
+	<script src="js/wl.js"></script>
+</head>
+<body>
+	<div id="userInfo">
+		<h1>Username:</h1>
+		<input type="text" id="username" placeholder="My name"></input>
+		<input type="submit" value="save" id="save"></input>
+	</div>
+	<div id="list" >
+		<h1>Welcome <span id="user"></span><input id="resetUser" class="funkyButton" type="submit" value="Change username"></input></h1>
+		<div class="reminder-container">
+			<span id="alreadyListed">You are already on the list</span>
+			<input id="addButton" class="funkyButton" type="submit" value="Add me"></input>
+			<ol class="waitingList" id="waitingList"></ol>
+		</div>
+	</div>
+	<audio src="audio/ding1.wav" preload ></audio>
+</body>
+</html>
