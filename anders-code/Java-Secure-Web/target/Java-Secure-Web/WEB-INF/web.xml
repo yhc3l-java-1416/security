@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<servlet>
+		<servlet-name>LeakingServlet</servlet-name>
+		<servlet-class>se.coredev.secure.web.LeakingServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LeakingServlet2</servlet-name>
+		<servlet-class>se.coredev.secure.web.LeakingServlet2</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LeakingServletFixed</servlet-name>
+		<servlet-class>se.coredev.secure.web.LeakingServletFixed</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MetaspaceLeakingServlet</servlet-name>
+		<servlet-class>se.coredev.secure.web.MetaspaceLeakingServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LeakingServlet</servlet-name>
+		<url-pattern>/leaking/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LeakingServlet2</servlet-name>
+		<url-pattern>/leaking2/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MetaspaceLeakingServlet</servlet-name>
+		<url-pattern>/metaspace/*</url-pattern>
+	</servlet-mapping>
+</web-app>
